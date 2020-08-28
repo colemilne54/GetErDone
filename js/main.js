@@ -88,13 +88,27 @@ function deleteTaskOnClick(elem) {
 
 
 function updateTheme(theme) {
-    let bgColor = theme == 'light' ? "255, 255, 255" : "19, 19, 19";
-    let textColor = theme == 'light' ? "12, 12, 12" : "255, 255, 255";
-    let shadowColor = theme == 'light' ? "0, 0, 0" : "255, 255, 255";
-    let grad1 = theme == 'light' ? "108, 29, 103" : "34, 208, 163";
-    let grad2 = theme == 'light' ? "100, 25, 148" : "32, 173, 211";
-    let sideGrad1 = theme == 'light' ? "255, 255, 255" : "35, 35, 35";
-    let sideGrad2 = theme == 'light' ? "251, 247, 247" : "46, 46, 46";
+    let bgColor = (theme == 'light') ? "255, 255, 255"
+                : (theme == 'dark') ? "19, 19, 19"
+                : "250, 218, 221";
+    let textColor = (theme == 'light') ? "12, 12, 12"
+                : (theme == 'dark') ? "255, 255, 255"
+                : "12, 12, 12";
+    let shadowColor = (theme == 'light') ? "0, 0, 0"
+                : (theme == 'dark') ? "255, 255, 255"
+                : "0, 0, 0";
+    let grad1 = (theme == 'light') ? "108, 29, 103"
+                : (theme == 'dark') ? "34, 208, 163"
+                : "171, 223, 255";
+    let grad2 = (theme == 'light') ? "100, 25, 148"
+                : (theme == 'dark') ? "32, 173, 211"
+                : "135, 206, 250";
+    let sideGrad1 = (theme == 'light') ? "255, 255, 255"
+                : (theme == 'dark') ? "35, 35, 35"
+                : "35, 35, 35";
+    let sideGrad2 = (theme == 'light') ? "251, 247, 247"
+                : (theme == 'dark') ? "46, 46, 46"
+                : "46, 46, 46";
 
     let root = document.documentElement;
 
@@ -108,7 +122,10 @@ function updateTheme(theme) {
 
     document.getElementsByClassName("current-theme")[0].classList.remove("current-theme");
 
-    let activateClass = theme == "light" ? "light" : "dark";
+    let activateClass = (theme == "light") ? "light"
+                      : (theme == dark) ? "dark"
+                      : "jenna";
+
     document.getElementById(activateClass).classList.add("current-theme");
 
     saveData("ToDoTheme", theme);
