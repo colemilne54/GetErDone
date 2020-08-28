@@ -123,7 +123,7 @@ function updateTheme(theme) {
     document.getElementsByClassName("current-theme")[0].classList.remove("current-theme");
 
     let activateClass = (theme == "light") ? "light"
-                      : (theme == dark) ? "dark"
+                      : (theme == "dark") ? "dark"
                       : "jenna";
 
     document.getElementById(activateClass).classList.add("current-theme");
@@ -132,7 +132,7 @@ function updateTheme(theme) {
 
     let invertStrength = (theme == "light") ? "0%"
                        : (theme == "dark") ? "100%"
-                       : "0%";
+                       : "100%";
     let icons = document.getElementsByClassName("icon");
     for(let i = 0; i < icons.length; i++) {
         icons[i].style.filter = `brightness(100%) invert(${invertStrength})`;
