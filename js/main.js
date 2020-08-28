@@ -130,7 +130,9 @@ function updateTheme(theme) {
 
     saveData("ToDoTheme", theme);
 
-    let invertStrength = theme == "light" ? "0%" : "100%";
+    let invertStrength = (theme == "light") ? "0%"
+                       : (theme == "dark") ? "100%"
+                       : "0%";
     let icons = document.getElementsByClassName("icon");
     for(let i = 0; i < icons.length; i++) {
         icons[i].style.filter = `brightness(100%) invert(${invertStrength})`;
