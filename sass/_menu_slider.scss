@@ -95,6 +95,10 @@ input#menu:checked {
         transition: all $color-transition-time;
 
         h5 {
+            //try
+            display: flex;
+            flex-direction: column;
+            
             margin-top: 7rem;
             font-size: var(--menu-font-size);
             text-transform: uppercase;
